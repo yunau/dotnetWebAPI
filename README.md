@@ -1,6 +1,6 @@
-# dotnetWebAPI
+# DotnetWebAPI
 
-# Creating a Web API with C# using Entity Framework and SQL Server
+# Creating a Web API with C# using dotnet/efcore and SQL Server
 
 This guide will walk you through the steps to create a Web API using C#, Entity Framework Core, and SQL Server.
 
