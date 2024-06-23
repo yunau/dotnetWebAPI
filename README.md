@@ -1,17 +1,30 @@
 # dotnetWebAPI
 
-Step 1:
+# Creating a Web API with C# using Entity Framework and SQL Server
 
-dotnet add package Microsoft.EntityFrameworkCore.SqlServer 
+This guide will walk you through the steps to create a Web API using C#, Entity Framework Core, and SQL Server.
+
+## Step 1: Install Required Packages
+
+Open a terminal in the root directory of your project and run the following commands to add necessary packages:
+
+```sh
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 dotnet add package Microsoft.EntityFrameworkCore.Tools
 dotnet add package Microsoft.AspNetCore.Cors
 
-Step 2:
+docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=SimplePassword123!' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2022-latest
+```
 
-Run "SQL Server 2022" Docker container
+##  Step 2: Configure SQL Server
 
-appsettings.json
+```sh
+docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=SimplePassword123!' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2022-latest
+```
 
+Next, configure your application to connect to the SQL Server by updating appsettings.json:
+
+```json
 {
   "Logging": {
     "LogLevel": {
@@ -24,18 +37,20 @@ appsettings.json
   },
   "AllowedHosts": "*"
 }
+```
 
-Step 3:
-
-Generate database and tables on SQL Server
-
+## Step 3: Generate Database and Tables
+```sh
 dotnet ef migrations add InitialCreate
 dotnet ef database update
+```
 
-Step 4:
+## Step 4: Run the Web API
 
+Run your Web API using the following command:
+```sh
 dotnet run
-SIMPLEWEBAPI.Controllers have the APIs
+```
 
 
 
